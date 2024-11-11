@@ -97,6 +97,7 @@ public class PlayerInput : MonoBehaviour
 
         OnMovementEvent?.Invoke(moveDirection);
     }
+
     private void PlayerRotate()
     {
         // 마우스 입력 받기
@@ -105,6 +106,5 @@ public class PlayerInput : MonoBehaviour
 
         OnRotateEvent?.Invoke(mouseX, mouseY);
     }
-
 
 }

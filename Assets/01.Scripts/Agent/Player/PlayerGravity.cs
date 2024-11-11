@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class PlayerGravity : MonoBehaviour
 {
     [SerializeField] private Transform pivot;
+    [SerializeField] private Transform target;
     [SerializeField] private float gravityPower;
 
     [SerializeField] private float rev_castingTime = 1f;
@@ -90,7 +91,7 @@ public class PlayerGravity : MonoBehaviour
         Quaternion rotY = Quaternion.Euler(getRotDir);
         Quaternion targetRotation = (pivot.rotation * rotY);
 
-        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        target.localRotation = Quaternion.Euler(0, 0, 0);
 
         Vector3 localRight = Vector3.right;
         Vector3 localForward = Vector3.forward;
@@ -108,11 +109,10 @@ public class PlayerGravity : MonoBehaviour
         return targetRotation;
     }
 
-    private List<int> values = new List<int>()
-    {0, 90, 180, 270, 360 };
+    private List<int> values = new List<int>() { 0, 90, 180, 270, 360 };
     private Vector3Int GetRotationDirection()
     {
-        int playerY = (int)(transform.localRotation.eulerAngles.y);
+        int playerY = (int)(target.eulerAngles.y);
 
         if (playerY < 0)
         {
