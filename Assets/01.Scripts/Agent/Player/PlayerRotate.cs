@@ -36,7 +36,7 @@ public class PlayerRotate : MonoBehaviour
         _eulerAngleX = ClampAngle(_eulerAngleX);
 
         _playerTrm.localRotation = Quaternion.Euler(0, EulerAngleY, 0); //플레이어는 좌우
-        transform.localRotation = Quaternion.Euler(_eulerAngleX, EulerAngleY, 0); //카메라만 상하
+        transform.localRotation = Quaternion.Euler(_eulerAngleX, 0, 0); //카메라만 상하
     }
 
     public void OnReverseRot(float rev_castingTime)

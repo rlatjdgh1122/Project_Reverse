@@ -91,8 +91,6 @@ public class PlayerGravity : MonoBehaviour
         Quaternion rotY = Quaternion.Euler(getRotDir);
         Quaternion targetRotation = (pivot.rotation * rotY);
 
-        target.localRotation = Quaternion.Euler(0, 0, 0);
-
         Vector3 localRight = Vector3.right;
         Vector3 localForward = Vector3.forward;
 
